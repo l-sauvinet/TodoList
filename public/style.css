@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
@@ -49,6 +49,25 @@ input{
     outline: none;
     background: transparent;
     padding: 10px;
+}
+
+select {
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #232526;
+    cursor: pointer;
+    appearance: none; /* Pour masquer la flèche par défaut dans certains navigateurs */
+    -webkit-appearance: none; /* Pour Safari */
+    -moz-appearance: none; /* Pour Firefox */
+}
+
+select::-ms-expand {
+    display: none; /* Pour masquer la flèche par défaut dans Internet Explorer */
 }
 
 button{
@@ -108,4 +127,21 @@ ul li span{
 
 ul li span:hover{
     background: #edeef0;
+}
+
+.priority {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+li[data-priority="1"] {
+    color: red;
+}
+
+li[data-priority="2"] {
+    color: orange;
+}
+
+li[data-priority="3"] {
+    color: green;
 }

@@ -12,6 +12,11 @@
             <h2>To-Do List</h2>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Ajouter une tâche">
+                <select id="priority-select">
+                    <option value="1">Haute</option>
+                    <option value="2">Moyenne</option>
+                    <option value="3">Basse</option>
+                </select>
                 <button onclick="addTask()">Add</button>
             </div>
             <ul id="list-container"></ul>
