@@ -6,32 +6,6 @@
     <title>To-Do List</title>
     <link rel="icon" href="img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="public/style.css">
-    <style>
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 140px;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 100%;
-            left: 50%;
-            margin-left: -70px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -40,14 +14,29 @@
             <div class="row">
                 <input type="text" id="input-box" placeholder="Ajouter une tâche">
                 <div class="tooltip">
-                    <select id="priority-select" >
+                    <select id="priority-select">
                         <option value="1">Haute</option>
                         <option value="2">Moyenne</option>
                         <option value="3">Basse</option>
                     </select>
                     <span class="tooltiptext">Sélectionnez l'importance de la tâche</span>
                 </div>
-                <button onclick="addTask()">Add</button>
+                <button class="add" onclick="addTask()">Ajouter</button>
+            </div>
+            <h3 class="filter">filtres :</h3>
+            <div class="row">
+                <button class="filter-all" onclick="filterTasks('all')">Toutes</button>
+                <button class="filter-check" onclick="filterTasks('checked')">Cochées</button>
+                <button class="filter-uncheck" onclick="filterTasks('unchecked')">Non Cochées</button>
+                <div class="tooltip">
+                    <select class="filter-priority" id="filter-priority-select" onchange="filterTasks('priority')">
+                        <option value="all">Toutes</option>
+                        <option value="1">Haute</option>
+                        <option value="2">Moyenne</option>
+                        <option value="3">Basse</option>
+                    </select>
+                    <span class="tooltiptext">Filtrer par priorité</span>
+                </div>
             </div>
             <ul id="list-container"></ul>
         </div>

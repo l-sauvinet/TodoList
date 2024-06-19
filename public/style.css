@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-.container{
+.container {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #232526, #414345);
@@ -15,7 +15,7 @@
     align-items: center;
 }
 
-.todo-app{
+.todo-app {
     width: 100%;
     max-width: 540px;
     background-color: white;
@@ -23,7 +23,7 @@
     border-radius: 10px;
 }
 
-.todo-app h2{
+.todo-app h2 {
     color: #232526;
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@
     user-select: none;
 }
 
-.row{
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,9 +41,10 @@
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
+    min-height: 35px;
 }
 
-input{
+input {
     flex: 1;
     border: none;
     outline: none;
@@ -51,7 +52,7 @@ input{
     padding: 10px;
 }
 
-select {
+#priority-select {
     border: none;
     outline: none;
     padding: 10px;
@@ -70,7 +71,7 @@ select::-ms-expand {
     display: none; /* Pour masquer la flèche par défaut dans Internet Explorer */
 }
 
-button{
+.add {
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -81,7 +82,7 @@ button{
     border-radius: 40px;
 }
 
-ul li{
+ul li {
     list-style: none;
     font-size: 17px;
     padding: 17px 8px 12px 50px;
@@ -90,7 +91,7 @@ ul li{
     position: relative;
 }
 
-ul li::before{
+ul li::before {
     content: '';
     position: absolute;
     height: 28px;
@@ -103,16 +104,16 @@ ul li::before{
     left: 8px;
 }
 
-ul li.checked{
+ul li.checked {
     color: #555;
     text-decoration: line-through;
 }
 
-ul li.checked::before{
+ul li.checked::before {
     background-image: url(../img/checked.png);
 }
 
-ul li span{
+ul li span {
     position: absolute;
     right: 0;
     top: 5px;
@@ -125,7 +126,7 @@ ul li span{
     border-radius: 50%;
 }
 
-ul li span:hover{
+ul li span:hover {
     background: #edeef0;
 }
 
@@ -144,4 +145,118 @@ li[data-priority="2"] {
 
 li[data-priority="3"] {
     color: rgb(0, 155, 0);
+}
+
+/* Styles supplémentaires pour les boutons de filtre */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.filter-container button, .filter-container select {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #edeef0;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filter-container button:hover, .filter-container select:hover {
+    background-color: #d4d5d7;
+}
+
+.filter-container button:last-child, .filter-container select:last-child {
+    margin-right: 0;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.filter{
+    color: #232526;
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+.filter-all{
+    height: 25px;
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+}
+
+.filter-all:hover{
+    background: linear-gradient(135deg, #232526, #414345);
+    color: white;
+}
+
+.filter-check{
+    height: 25px;
+    width: 65px;
+    border-radius: 5px;
+    border: none;
+}
+
+.filter-check:hover{
+    background: linear-gradient(135deg, #232526, #414345);
+    color: white;
+}
+
+.filter-uncheck{
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+
+.filter-uncheck:hover{
+    background: linear-gradient(135deg, #232526, #414345);
+    color: white;
+}
+
+.filter-priority{
+    background: none;
+    height: 25px;
+    width: 75px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 25px;
+}
+
+.filter-priority:hover{
+    background: linear-gradient(135deg, #232526, #414345);
+    color: white;
+}
+
+.filter-priority option{
+    background: white;
+    color: black;
 }
