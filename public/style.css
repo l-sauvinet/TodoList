@@ -62,13 +62,13 @@ input {
     font-size: 16px;
     color: #232526;
     cursor: pointer;
-    appearance: none; /* Pour masquer la flèche par défaut dans certains navigateurs */
-    -webkit-appearance: none; /* Pour Safari */
-    -moz-appearance: none; /* Pour Firefox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 select::-ms-expand {
-    display: none; /* Pour masquer la flèche par défaut dans Internet Explorer */
+    display: none;
 }
 
 .add {
@@ -147,7 +147,6 @@ li[data-priority="3"] {
     color: rgb(0, 155, 0);
 }
 
-/* Styles supplémentaires pour les boutons de filtre */
 .filter-container {
     display: flex;
     justify-content: space-between;
